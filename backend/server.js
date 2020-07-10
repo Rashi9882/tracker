@@ -16,13 +16,14 @@ const uri = process.env.ATLAS_URI;
  const connection = mongoose.connection;
  connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
+    console.log("connected");
     
  })
 
  const exerciseRouter = require('./routes/exercise'); //tell the server to use these files or schema
  const userRouter = require('./routes/user');
 
-
+console.log("server established");
  app.use('/exercise',exerciseRouter);
  app.use('/user',userRouter);
 
